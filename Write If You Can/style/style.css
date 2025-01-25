@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    outline: 0;
+}
+
+.game{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+}
+
+
+
+.display{
+    height: 65%;
+    display: flex;
+}
+
+.view{
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.example{
+    width: 50%;
+    height: 100%;
+    border-left: 2px solid #000;
+    position: relative;
+}
+
+#editor{
+    width: 100%;
+    height: 35%;
+    background: black;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    font: bold 30px sans-serif;
+}
+
+:is(.view .box, .example .box){
+    width: 100px;
+    height: 150px;
+    background: orange;
+    transition: .7s;
+    position: absolute;
+    translate: -50% -50%;
+    top: 50%;
+    left: 50%;
+}
+
+.point{
+    position: absolute;
+    padding: 10px 15px;
+    background: blueviolet;
+    font: bold 25px fantasy;
+    text-align: center;
+    left: 50%;
+    translate: -50% 0;
+    text-shadow: 5px 7px 12px  white;
+    top: 6%;
+    border-radius: 10px;
+    border: 2px dashed black;
+    transition: .9s;
+}
+
+.example .box{
+    height: 0;
+    width: 0;
+    background: none;
+}
+
+
+.menu{
+    top: 0;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: white;
+    text-align: center;
+    transition: 1.5s;
+}
+
+.title{
+    margin-top: 4%;
+    font: bold 90px fantasy;
+    color: black;
+    transition: .7s;
+    cursor: pointer;
+}
+
+.title:hover{
+    color: blueviolet;
+}
+
+.box__btns{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    translate: -50%;
+    top: 24%;
+    left: 50%;
+}
+
+.btn{
+    position: absolute;
+    padding: 13px 30px;
+    font-size: 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    background: #282424;
+    color: white;
+    border: 2px dashed white;
+    transition: .5s;
+}
+
+.btn:hover{
+    background: blueviolet;
+    border: 2px dashed black;
+}
+
+.btn.Play{
+    top: 40%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.btn.desc{
+    top: 67%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.decs__box{
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    translate: -50% -50%;
+    height: 450px;
+    width: 450px;
+    background: linear-gradient(45deg, black, blueviolet);
+    border-radius: 25% 0 25% 0;
+    transition: .9s;
+    z-index: 2;
+}
+
+.text{
+    width: 350px;
+    height: 100%;
+    margin: 10px auto;
+    line-height: 40px;
+    font-size: 30px;
+    color: white;
+}
+
+.desc__btn{
+    font-size: 30px;
+    top: -5%;
+    right: -1%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, blueviolet, black);
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    transition: .9s;
+}
+
+.desc__btn:hover{
+    rotate: 360deg;
+}
+
+.boxs__one{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: blueviolet;
+    top: 50%;
+    left: 2%;
+    translate: 0 -30%;
+    border-radius: 30px 60px 120px 240px;
+    border: 15px double black;
+    transition: 1.2s;
+    animation: boxsone 7s infinite;
+}
+
+@keyframes boxsone {
+    50%{width: 400px; height: 500px; background: green; position: absolute; top: 60%; left: 2%; translate: 0 -50%; border: none; border-radius: 50% 20% 30% 40%; transition: 1.2s;}
+}
+
+
+.boxs__two{
+    width: 300px;
+    height: 100px;
+    background: brown;
+    border: 25px double blueviolet;
+    position: absolute;
+    rotate: -40deg;
+    top: 50%;
+    right: 2%;
+    animation: boxtwo 10s infinite;
+    transition: 1.2s;
+}
+
+@keyframes boxtwo {
+    50%{width: 300px; height: 150px; background: black; rotate: 0deg; border: 20px dotted white; border-radius: 30px; transition: 1.2s; position: absolute; top: 50%; right: 2%;}
+}
+
+.boxs__three{
+    position: absolute;
+    left: 42%;
+    top: 72%;
+    translate: -50% -50%;
+    width: 200px;
+    height: 200px;
+    background: silver;
+    border: 10px solid black;
+    rotate: 90deg;
+    animation: boxthree 5s infinite;
+}
+
+@keyframes boxthree {
+    70%{rotate: -90deg; left: 58%;}
+}
