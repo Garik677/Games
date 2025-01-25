@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Pixel Art Maker</title>
+</head>
+<body>
+    <div class="game">
+        <section class="createBox">
+            <div class="list1">
+                <h3 class="title">Grid Width</h3>
+                <input type="range" max="30" value="0" min="0">
+                <span class="num W">0</span>
+            </div>
+            <div class="list2">
+                <h3 class="title">Grid Height</h3>
+                <input type="range" max="30" value="0" min="0">
+                <span class="num H">0</span>
+            </div>
+        </section>
+        <section class="funcsBtns">
+            <button class="funBtn">Create Grid</button>
+            <button class="funBtn">Clear Grid</button>
+            <input type="color">
+            <button class="funBtn">Erase</button>
+            <button class="funBtn">Paint</button>
+        </section>
+        <section class="draw">
+            <table class="tbl" cellspacing="0">
+
+            </table>
+        </section>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
