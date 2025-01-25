@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+
+.game{
+    height: 100vh;
+    background: url(../images/bg.png) 0 100% / cover;
+    animation: bganm 5s linear infinite;
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes bganm {
+    to{background-position-x: -100vw;}
+}
+
+.pipe{
+    position: absolute;
+    right: -150px;
+    width: 140px;
+    height: 30%;
+    background: url(../images/pipe.png) no-repeat center / 100% 100%;
+    animation: pipeanm 5s linear infinite;
+    transition: .5s;
+    z-index: 1;
+    
+}
+
+.pipe.top{
+    top: 0;
+    scale: 1 -1;
+}
+
+.pipe.bottom{
+    bottom: 95px;
+}
+
+@keyframes pipeanm {
+    to{right: 100%;}
+}
+
+.game :is(:nth-child(4), :nth-child(5)){
+    animation-delay: 1s;
+}
+
+.game :is(:nth-child(6), :nth-child(7)){
+    animation-delay: 3s;
+}
+
+.bird{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    width: 66px;
+    height: 61px;
+    background: url(../images/Bird.png) no-repeat -6px -1px / 75px 63px;
+    border-radius: 30px 25px 20px 35px; 
+    transition: .1s;
+}
+.gameOver{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50%  -50%;
+    font: bold 7vw verdana;
+    transition: .4s;
+    opacity: 0;
+    text-shadow: 5px 3px 7px black;
+    color: red;
+    -webkit-text-stroke: 3px black;
+    z-index: 2;
+}
+
+.point{
+    font: bold 2vw sans-serif;
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    z-index: 2;
+}
+
+.time{
+    font: bold 2vw sans-serif;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    z-index: 2;
+}
+
+.boxReload{
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    translate: -50% -50%;
+    padding: 20px;
+    z-index: 4;
+    transition: 1s;
+}
+
+
+
+.realod{
+    position: relative;
+    width: 130px;
+    height: 60px;
+    border-radius: 10px;
+    font: bold 1.5vw verdana;
+    background: white;
+    border: 2px solid black;
+    cursor: pointer;
+    overflow: hidden;
+    transition: .5s;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.realod:active{
+    transition: .1s;
+    translate: 0 7px;
+}
+
+.realod::before{
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: green;
+    opacity: .5;
+    z-index: 1;
+    transition: .2s;
+}
+
+.realod:hover.realod::before{
+    top: 0;
+    left: 0;
+}
+
+span{
+    position: absolute;
+    translate: -50% -50%;
+    z-index: 5;
+    color: black;
+    transition: .4s;
+}
+
+.realod:hover span{
+    color: white;
+}
+
+.totalPointsBox{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    font: normal .9vw verdana;
+    translate: -50% -50%;
+    z-index: 4;
+    color: white;
+    display: none;
+    text-shadow: 2px 3px 1px black;
+}
+

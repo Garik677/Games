@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box; user-select: none;}
+
+        .menu{
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background-image: url(images/menu/menubg2.jpg);
+            background-position: 0 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .progBox{
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            padding: 15px;
+            translate: -50% -50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .3s;
+        }
+
+        .prog{
+            width: 50vw;
+            height: 70px;
+            border: 3px solid black;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value{
+            width: 0;
+            height: 100%;
+            background: rgb(99, 10, 138);
+            border-radius: 8px;
+            transition: .1s;
+        }
+
+        .current{
+            font: bold 1.2vw verdana;
+            margin-left: 20px;
+        }
+
+        img{
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            bottom: 5%;
+            left: 50%;
+            translate: -50% 0;
+            animation: birdanm .8s linear infinite;
+        }
+
+        @keyframes birdanm {
+            50%{bottom: -3%; rotate: 10deg;}
+        }
+
+        .play{
+            position: absolute;
+            top: 70%;
+            left: -100%;
+            padding: 15px 35px;
+            translate: -50% -50%;
+            border:  2px solid black;
+            font: bold 1.6vw verdana;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: .7s;
+            background: rgb(154, 126, 24);
+            color: white;
+            text-shadow: 2px 3px 1px black;
+        }
+
+        .play:hover{
+            background: rgb(21, 137, 104);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+    <div class="progBox">
+        <div class="prog">
+            <div class="value"></div>
+        </div>
+        <h3 class="current">0%</h3>
+    </div>
+    <button class="play">Play</button>
+    <img src="images/Bird.png" alt="">
+    </div>
+    <script>
+        const progBox = document.querySelector('.progBox');
+        const prog = document.querySelector('.prog');
+        const value = document.querySelector('.value');
+        const current = document.querySelector('.current');
+        const play = document.querySelector('.play');
+        const click = new Audio('sound/click3.mp3');
+        console.log(play);
+       let total = 0;
+        let setint = setInterval(() => {
+            let cur = Math.trunc(Math.random() * (10 - 1) + 1);
+            total += cur;
+            value.style.width = total + '%';
+            if(total >= 100){
+                total = 100;
+                clearInterval(setint);
+                console.log(true)
+                setTimeout(() => {
+                    progBox.style.left = '150%';
+                    play.style.left = '50%'
+                }, 700)
+            }
+            current.innerText = `${total}%`;
+        }, 500);
+        play.onclick = () => {
+            click.play()
+            setTimeout(() => {
+                location.href = 'index.html';
+            }, 500)
+        };
+    </script>
+</body>
+</html>
