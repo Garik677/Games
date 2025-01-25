@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.game{
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: #f4c531;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hangman{
+    width: 650px;
+    height: 350px;
+    background: white;
+    position: relative;
+    border-radius: 10px;
+    z-index: 2;
+    transition: .7s;
+}
+
+.winnerBox{
+    width: 650px;
+    height: 350px;
+    background: linear-gradient(180deg, rgb(15, 102, 121), rgb(72, 23, 169));
+    position: absolute;
+    border-radius: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .7s;
+}
+
+.won{
+    font: bold 2vw sans-serif;
+    color: rgb(58, 50, 119);
+    text-shadow: 1px 3px 7px black;
+    -webkit-text-stroke: 1px white;
+}
+
+.nameTrueText{
+    font: 18px cursive;
+}
+
+strong{
+    color: rgb(175, 29, 117);
+}
+
+.next{
+    padding: 10px 37px 10px 37px;
+    background: rgb(9, 139, 126);
+    outline: 0;
+    font: bold 30px sans-serif;
+    margin-top: 50px;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    cursor: pointer;
+    border: 3px solid black;
+}
+
+.next:active{
+    box-shadow: inset 1px 3px 7px black;
+}
+
+.please{
+    font: bold 1.4vw verdana;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.pleaseBox{
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn{
+    width: 120px;
+    height: 50px;
+    background: transparent;
+    border: 3px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    font: bold 1vw verdana;
+}
+
+.keybord{
+    padding: 7px;
+    margin-top: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    transition: .4s;
+    opacity: 0;
+}
+
+.button{
+    border: 2px solid black;
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font: normal 1.5vw  sans-serif;
+    cursor: pointer;
+}
+
+.textBox{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 13px;
+    transition: .4s;
+    opacity: 0;
+}
+
+.line{
+    font: bold 1.5vw verdana;
+    margin: 0 3px;
+}
+
+.man{
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    translate: -50% 0;
+    width: 350px;
+    height: 200px;
+    border: 2px solid black;
+}
+
+.lineOne{
+    width: 150px;
+    height: 3px;
+    background: #000;
+    position: absolute;
+    bottom: 7%;
+    left: 25px;
+}
+
+.lineTwo{
+    height: 160px;
+    width: 3px;
+    background: #000;
+    position: absolute;
+    left: 7%;
+    bottom: 7%;
+}
+
+.lineThree{
+    width: 80px;
+    height: 3px;
+    background: #000;
+    position: absolute;
+    left: 7%;
+    top: 11%;
+}
+
+.lineFor{
+    width: 3px;
+    height: 25px;
+    background: #000;
+    position: absolute;
+    top: 11%;
+    left: 29.5%;
+}
+
+.head{
+    width: 40px;
+    height: 40px;
+    border: 3px solid black;
+    position: absolute;
+    border-radius: 50%;
+    left: 24.5%;
+    top: 23.5%;
+    opacity: 0;
+}
+
+.body{
+    width: 3px;
+    height: 40px;
+    background: #000;
+    position: absolute;
+    top: 43%;
+    left: 29.8%;
+    opacity: 0;
+}
+
+.footLeft{
+    width: 3px;
+    height: 45px;
+    background: #000;
+    position: absolute;
+    rotate: 37deg;
+    top: 60.7%;
+    left: 25.9%;
+    opacity: 0;
+}
+
+.footRight{
+    width: 3px;
+    height: 45px;
+    background: #000;
+    position: absolute;
+    rotate: -37deg;
+    top: 60.7%;
+    left: 33.6%;
+    opacity: 0;
+}
+
+.handLeft{
+    width: 3px;
+    height: 37px;
+    background: #000;
+    position: absolute;
+    rotate: 45deg;
+    top: 46%;
+    left: 25.9%;
+    opacity:0;
+}
+
+.handRight{
+    width: 3px;
+    height: 37px;
+    background: #000;
+    position: absolute;
+    rotate: -45deg;
+    top: 46%;
+    left: 33.7%;
+    opacity: 0;
+}
