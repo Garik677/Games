@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body{
+    height: 100vh;
+    background: #140152;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.memoryGame{
+    margin-top: 60px;
+    width: 520px;
+    height: 670px;
+}
+
+.scoreAndMemoryBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    font: bold 25px verdana;
+    color: white;
+    gap: 10px;
+}
+
+.winner{
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    translate: -50% -50%;
+    transition: .5s;
+    font: bold 70px verdana;
+    color: aquamarine;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 1px 3px 15px white;
+    opacity: 0; 
+    z-index: 4;
+    pointer-events: none;
+}
+
+.gameName{
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    translate: -50% 0;
+    font: bold 50px sans-serif;
+    color: white;
+    text-shadow: 2px 3px 11px white;
+    -webkit-text-stroke: 2px black;
+}
+
+.gellerysList{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap:  wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.gallery{
+    width: calc(100% / 4 - 5px);
+    height: calc(100% / 4 - 5px);
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+img{
+    width: 70%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    opacity: 0;
+    transition: .2s;
+}
+
+span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    font: bold 45px verdana;
+    color: #140152;
+    transition: .5s;
+}
+
+.gallery:hover span{
+    box-shadow: inset 0  0 40px black;
+    
+}
+
+.gallery:active{
+    transition: .2s;
+    scale: .9;
+}
+
+.box{
+    transition: .3s;
+    transform: rotateY(180deg);
+    z-index: 0;
+}
+
+.relod{
+    position: absolute;
+    left: 2%;
+    top: 7%;
+    padding: 10px 25px;
+    font: bold 30px sans-serif; 
+    border: 2px solid black;
+    color: white;
+    background: chocolate;
+    cursor: pointer;
+    transition: .4s;
+    -webkit-text-stroke: 2px black;
+    border-radius: 10px;
+    z-index: 4;
+}
+
+.relod:hover{
+    padding: 10px 35px;
+    background: cadetblue;
+    box-shadow: inset 0 0 25px black;
+}
+
+.relod:active{
+    transition: .2s;
+    scale: .9;
+}
+
+.gameOverBg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    opacity: 0;
+    backdrop-filter: blur(100px);
+}
